@@ -1,0 +1,115 @@
+<h4>Ingrese <small> los datos de la persona </small></h4>
+<hr>
+<form autocomplete="off" (ngSubmit)="guardar( forma )" #forma="ngForm">
+
+  <div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Tipo de documento</label>
+      <div class="col-8">
+
+        <select class="form-control"
+                name="tipo"
+                ngModel>
+          <option></option>
+          <option>Tarjeta de identidad</option>
+          <option>Cédula de ciudadania</option>
+          <option>Pasaporte</option>
+          required
+  
+
+
+        </select>
+
+      </div>      
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Documento</label>
+      <div class="col-8">
+
+      <input class="form-control"
+        type="text"
+        name='numero'
+        [class.is-invalid]="numero.invalid && numero.touched"
+        [ngModel]="usuario.numero" 
+        placeholder="Número de documento"
+        required
+        minlength="5"
+        #numero="ngModel">
+      <small *ngIf="numero.invalid && numero.touched"
+        class="form-text text-danger ">Ingrese un número de documento</small>
+
+
+
+      </div>      
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Nombre</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               name='nombre'
+               [class.is-invalid]="nombre.invalid && nombre.touched"
+               [ngModel]="usuario.nombre" 
+               placeholder="Nombre"
+               required
+               minlength="5"
+               #nombre="ngModel">
+        <small *ngIf="nombre.invalid && nombre.touched"
+               class="form-text text-danger ">Ingrese un nombre</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Apellido</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               name='apellido'
+               placeholder="Apellido"
+               [class.is-invalid]="apellido.invalid && apellido.touched" 
+               [ngModel]="usuario.apellido" 
+               required
+               minlength="5"
+               #apellido="ngModel">
+        <small *ngIf="apellido.invalid && apellido.touched"
+               class="form-text text-danger ">Ingrese un Apellido</small>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Teléfono</label>
+    <div class="col-8">
+
+      <input class="form-control"
+             type="number"
+             name='telefono'
+             [class.is-invalid]="telefono.invalid && telefono.touched"
+             [ngModel]="usuario.telefono" 
+             placeholder="Teléfono"
+             required
+             #telefono="ngModel">
+      <small *ngIf="telefono.invalid && telefono.touched"
+             class="form-text text-danger ">Ingrese un telefono correcto</small>
+    </div>
+  </div>
+
+
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button type="submit" class="btn btn-outline-primary btn-block">
+        Guardar
+      </button>
+    </div>
+  </div>
+
+</form>
