@@ -1,6 +1,6 @@
 <h4>Ingrese <small> los datos de la persona </small></h4>
 <hr>
-<form autocomplete="off" (ngSubmit)="guardar( forma )" #forma="ngForm">
+<form autocomplete="off" (ngSubmit)="save( forma )" #forma="ngForm">
 
   <div>
 
@@ -12,9 +12,9 @@
                 name="tipo"
                 ngModel>
           <option></option>
-          <option>Tarjeta de identidad</option>
-          <option>Cédula de ciudadania</option>
-          <option>Pasaporte</option>
+          <option>TI</option>
+          <option>CC</option>
+          <option>PT</option>
           required
   
 
